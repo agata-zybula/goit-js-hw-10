@@ -13,8 +13,8 @@ var _ = require('lodash');
 // var debounce = require('lodash.debounce');
 
 let clearCountries = () => {
-  countryList.innerHtml = '';
-  countryInfo.innerHtml = '';
+  countryList.innerHTML = '';
+  countryInfo.innerHTML = '';
 };
 
 let searchCountry = () => {
