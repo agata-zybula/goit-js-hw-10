@@ -18,3 +18,19 @@ body {
   max-width: 320px;
   margin-bottom: 16px;
 }
+
+.list-style {
+  list-style-type: none;
+}
+
+.list-item {
+  margin: 10px;
+}
+
+.flex {
+  display: flex;
+}
+
+.country-style {
+  font-size: 30px;
+}
