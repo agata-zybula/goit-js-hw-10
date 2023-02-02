@@ -32,6 +32,14 @@ let searchCountry = () => {
 
             data.forEach((data) => {
                 countryList.insertAdjacentHTML("beforeend", `<li>${data.name.official}</li>`);
+                countryInfo.insertAdjacentHTML(
+                  'beforeend',
+                  `<ul><li>${data.capital}</li><li><img src="${
+                    data.flags.svg
+                  }"/></li><li>${data.population}</li><li>${
+                    Object.values(data.languages).join(', ')
+                  }</li></ul>`
+                );
             })
 
         });
