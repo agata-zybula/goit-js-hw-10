@@ -12,17 +12,28 @@ const countryInfo = document.querySelector('.country-info');
 var _ = require('lodash');
 // var debounce = require('lodash.debounce');
 
+ let clearCountries = () => {
+   countryList.innerHtml = '';
+   countryInfo.innerHtml = '';
+ };
 
 let searchCountry = () => {
     let newInput = input.value.trim();
     if (newInput === '') {
-        let clearCountries = () => {
-            countryList.innerHtml = '';
-            countryInfo.innerHtml = '';
-        };
+        clearCountries();
     } else {
         fetchCountries(newInput).then(data => {
-          console.log(data);
+            console.log(data);
+            
+            // const li = document.createElement("li");
+            // let list = data.map(data => `<li>${data.name.official}</li>`)
+            // console.log(list);
+            // countryList.insertAdjacentElement('afterbegin', li);
+
+            data.forEach((data) => {
+                countryList.insertAdjacentHTML("beforeend", `<li>${data.name.official}</li>`);
+            })
+
         });
     }
 };
